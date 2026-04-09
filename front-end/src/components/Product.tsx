@@ -39,7 +39,7 @@ const Product = ({
         console.log("Erro ao realizar a requisição");
         return;
       }
-
+      //vai fazer uma requisição no banco e atualizar os produtos apos a exclusão
       getProduct();
     } catch (error) {
       console.error(error);
@@ -102,16 +102,13 @@ const Product = ({
   return (
     <div>
       <div className="flex gap-2">
-        <img
-          src={`./${img}`}
-          className="h-20.75 w-25 md:h-41.5 md:w-50"
-        />
+        <img src={`./${img}`} className="h-20.75 w-25 md:h-41.5 md:w-50" />
         <div className="flex w-full flex-col">
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold uppercase md:text-lg">{name}</p>
             {user?.admin && (
               <div
-                className="flex cursor-pointer items-center rounded-md border px-1 text-xs text-red-500 uppercase"
+                className="flex cursor-pointer items-center rounded-md border bg-white px-1 text-xs font-bold text-red-500 uppercase"
                 onClick={() => handleDeleteProduct(id)}
               >
                 Deletar

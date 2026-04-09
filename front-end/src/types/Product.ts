@@ -9,5 +9,4 @@ export type ProductType = {
 
 export type ProductProps = ProductType & {
   setProducts: React.Dispatch<React.SetStateAction<ProductType[]>>;
-  
 };

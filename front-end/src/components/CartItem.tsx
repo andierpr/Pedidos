@@ -1,7 +1,5 @@
 import { ChevronLeft, Trash } from "lucide-react";
 import { formatterPrice } from "../utils/formatterPrice";
-import { useContext } from "react";
-import { CartItemContext } from "../contexts/CartItemsContext";
 
 type CartItemType = {
   title: string;
@@ -14,7 +12,7 @@ type CartItemType = {
 const CartItem = ({ title, price, img, id, quantity }: CartItemType) => {
   return (
     <div className="flex items-center gap-3">
-      <img src={`./${img}`} alt="" className="w-[100px] rounded-md" />
+      <img src={`./${img}`} alt="" className="w-25 rounded-md" />
 
       <div className="flex-1">
         <p className="text-sm font-bold uppercase">{title}</p>

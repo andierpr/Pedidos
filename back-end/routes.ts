@@ -5,20 +5,28 @@ import {
   logout,
   register,
 } from "./src/controller/user_controller.js";
-
 import { authMiddleware } from "./src/middlewares/auth.js";
-import { getProducts } from "./src/controller/product-controller.js";
+import {
+  deleteProduct,
+  getProducts,
+} from "./src/controller/product-controller.js";
+import {
+  getCartItems,
+  createCartItem,
+} from "./src/controller/cartItem-controller.js";
 
 export const router = Router();
 
+// Rotas de usuário
 router.post("/login", login);
 router.post("/register", register);
-
-// protegido
 router.get("/me", authMiddleware, auth);
-
-// protegido
 router.post("/logout", authMiddleware, logout);
 
-//Rota de produto
-router.get("/get-Products", getProducts);
+// Rota de produto
+router.get("/get-products", getProducts);
+router.delete("/delete-product/:id", authMiddleware, deleteProduct);
+
+// Cart
+router.get("/get-cart-items", authMiddleware, getCartItems);
+router.post("/create-cart-item", authMiddleware, createCartItem);

@@ -6,26 +6,19 @@ export const authMiddleware = (
   res: Response,
   next: NextFunction,
 ) => {
-  const token = req.cookies?.user;
+  const { user } = req.cookies;
 
   if (!process.env.JWT_SECRET) {
-    return res.status(500).json({ message: "Erro no servidor" });
-  }
-
-  if (!token) {
-    return res.status(401).json({ message: "Token não fornecido" });
+    res.status(500).json({ message: "Erro no servidor" });
+    return;
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+    const decoded = jwt.verify(user, process.env.JWT_SECRET);
     req.user = decoded;
-
-    return next();
+    next();
   } catch (error) {
-    console.error("Erro JWT:", error);
-    return res.status(401).json({
-      message: "Token inválido ou expirado",
-    });
+    res.status(401).json({ message: "Usuário não autenticado" });
+    return;
   }
 };
