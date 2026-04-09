@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Pedidos from "./pages/Pedidos";
 
+import PublicRoute from "./components/PublicRoute";
+
 import Home from "./pages/Home";
 import Header from "./components/Header";
 
@@ -28,7 +30,18 @@ export const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
   },
-  { path: "/register", element: <Register /> },
+  {
+    path: "/register",
+    element: (
+      <PublicRoute>
+        <Register />
+      </PublicRoute>
+    ),
+  },
 ]);

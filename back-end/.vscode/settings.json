@@ -1,0 +1,214 @@
+{
+  // =============================
+  // 💾 AUTO SAVE (ideal)
+  // =============================
+  "files.autoSave": "off",
+  "files.autoSaveDelay": 1000,
+  "files.hotExit": "onExitAndWindowClose",
+
+  // =============================
+  // 🧠 EDITOR (clean + performance)
+  // =============================
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "line",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "on",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // =============================
+  // ⚡ CODE ACTIONS (controlado)
+  // =============================
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+
+  // =============================
+  // 📦 IMPORTS (correto - atualizado)
+  // =============================
+  // "javascript.updateImportsOnFileMove.enabled": "always",
+  // "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+
+  // =============================
+  // 🧾 EDITOR UI
+  // =============================
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.showTabs": "multiple",
+
+  // =============================
+  // 🧭 CLEAN UI
+  // =============================
+  "breadcrumbs.enabled": false,
+
+  // =============================
+  // 🎨 TEMA
+  // =============================
+  "workbench.colorTheme": "One Dark Pro",
+
+  // =============================
+  // ⚛️ FRONTEND (React / TS)
+  // =============================
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  // =============================
+  // 🧪 ESLINT (essencial)
+  // =============================
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // =============================
+  // 💡 SUGESTÕES
+  // =============================
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // =============================
+  // ⚡ PERFORMANCE (fundamental)
+  // =============================
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true
+  },
+
+  // =============================
+  // ✨ EXPERIÊNCIA MODERNA
+  // =============================
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.inlineSuggest.enabled": true,
+  //👀 LEITURA VISUAL (PERFEITA)
+  // return → 🔴 fluxo
+  // const → 🟣 estrutura
+  // count → 🟠 variável
+  // useState → 💙 hook destacado
+  // div → 🔹 HTML
+  // Header → 🟣 componente
+  // className → 🟤 (agora NÃO confunde com variável)
+  // onClick → 🟢 interação
+  // children → 🔷 parâmetro
+  // true/false → ⚪ neutro
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      // 🔴 RETURN (fluxo)
+      {
+        "scope": "keyword.control.return",
+        "settings": {
+          "foreground": "#E06C75",
+          "fontStyle": "bold"
+        }
+      },
+
+      // 🟣 CONST / LET (declaração)
+      {
+        "scope": "storage.type",
+        "settings": {
+          "foreground": "#C678DD",
+          "fontStyle": "bold"
+        }
+      },
+
+      // 🟠 VARIÁVEIS / STATE (dados mutáveis)
+      {
+        "scope": ["variable.other.readwrite", "variable.other.constant"],
+        "settings": {
+          "foreground": "#F4A261"
+        }
+      },
+
+      // 🔵 PROPRIEDADES (estrutura de objeto)
+      {
+        "scope": "variable.other.property",
+        "settings": {
+          "foreground": "#4EA1F3"
+        }
+      },
+
+      // 🔷 PARÂMETROS (entrada de função)
+      {
+        "scope": "variable.parameter",
+        "settings": {
+          "foreground": "#2EC4B6",
+          "fontStyle": "italic"
+        }
+      },
+
+      // 💙 HOOKS (React - destaque forte)
+      {
+        "scope": "support.function",
+        "settings": {
+          "foreground": "#3A86FF",
+          "fontStyle": "bold"
+        }
+      },
+
+      // 🔹 HTML TAGS (estrutura)
+      {
+        "scope": "entity.name.tag",
+        "settings": {
+          "foreground": "#2A9D8F"
+        }
+      },
+
+      // 🟣 COMPONENTES REACT
+      {
+        "scope": "support.class.component",
+        "settings": {
+          "foreground": "#9D4EDD",
+          "fontStyle": "bold"
+        }
+      },
+
+      // 🟤 PROPS (className etc) → AGORA MAIS DISTINTO
+      {
+        "scope": "entity.other.attribute-name",
+        "settings": {
+          "foreground": "#E76F51"
+        }
+      },
+
+      // 🟢 EVENTOS (interação)
+      {
+        "scope": "entity.other.attribute-name.event",
+        "settings": {
+          "foreground": "#2DC653",
+          "fontStyle": "italic"
+        }
+      },
+
+      // 🟧 STRINGS
+      {
+        "scope": "string",
+        "settings": {
+          "foreground": "#F9844A"
+        }
+      },
+
+      // ⚪ BOOLEANOS
+      {
+        "scope": "constant.language.boolean",
+        "settings": {
+          "foreground": "#CED4DA",
+          "fontStyle": "bold"
+        }
+      }
+    ]
+  },
+  "postman.settings.dotenv-detection-notification-visibility": false
+}
